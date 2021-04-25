@@ -1,41 +1,43 @@
-# DIAMOL Chapter 6 Lab - Sample Solution
+# 6장 연습문제 해답 예
 
-If you've been running lots of containers from Chapter 6 and using lots of ports, you can start by tidying up:
 
-> This will remove **ALL** of your containers
+6장의 내용을 진행하는 동안 실행 중인 컨테이너의 수가 너무 많아졌다면, 다음 명령을 사용해 컨테이너를 제거한다.
+
+> 주의: 다음 명령을 실행하면 기존의 **모든** 컨테이너가 제거된다.
 
 ```
 docker container rm -f $(docker container ls -aq)
 ```
 
-Now run a container with the lab's to-do list image:
+이제 연습문제의 이미지로 컨테이너를 실행한다.
 
 ```
-docker container run -d -p 8015:80 diamol/ch06-lab
+docker container run -d -p 8015:80 diamolkor/ch06-lab
 ```
 
-Browse to http://localhost:8015/list  - it should look like this:
+웹 브라우저에서 http://localhost:8015/list 에 접근해 보면 아래와 같은 화면을 볼 수 있다.
 
-![Sample to-do list with some important tasks](./todo-list-v3.png)
+![할일 목록의 예](./todo-list-v3.png)
 
-> A set of tasks which everyone should get done :)
+> 할일 목록의 예
 
-Let's create a volume to use for storing the database file instead:
+그 다음 데이터베이스 파일을 저장할 볼륨을 생성한다.
 
 ```
 docker volume create ch06-lab
 ```
 
-You can create a configuration file which specifies a different path for the database file, and that path can be your volume mount. 
+설정 파일에서 데이터베이스 파일을 저장할 경로를 지정할 수 있는데, 이 경로는 볼륨 마운트를 대상으로 할 수도 있다.
 
-My [config.json](./solution/config.json) configures the app to write the database file in `/new-data`.
+필자의 [config.json](.solution/config.json) 파일에는 데이터베이스 파일을 `/new-data`에 저장하도록 설정했다.
 
-To put that together, we'll run a container which uses:
+그리고 다음 대상을 모두 사용하는 컨테이너를 실행한다.
 
-- a read-only bind mount to load the new config file into the container
-- a read-write volume mount as the target for the database file
+- 컨테이너가 새로운 설정 파일을 읽어오는 읽기전용 바인드 마운트
+- 데이터베이스 파일을 저장할 쓰기가능 볼륨 마운트
 
-Which is this set of paths on Windows:
+
+이 경로는 다음과 같이 지정한다(윈도우)
 
 ```
 $configSource="$(pwd)/solution".ToLower()
@@ -43,7 +45,7 @@ $configTarget='c:\app\config'
 $dataTarget='c:\new-data'
 ```
 
-And this on Linux:
+리눅스 환경에서는 다음과 같이 지정한다
 
 ```
 configSource="$(pwd)/solution"
@@ -51,12 +53,12 @@ configTarget='/app/config'
 dataTarget='/new-data'
 ```
 
-And now you can run the container:
+그리고 컨테이너를 실행한다.
 
 ```
-docker container run -d -p 8016:80 --mount type=bind,source=$configSource,target=$configTarget,readonly --volume ch06-lab:$dataTarget diamol/ch06-lab
+docker container run -d -p 8016:80 --mount type=bind,source=$configSource,target=$configTarget,readonly --volume ch06-lab:$dataTarget diamolkor/ch06-lab
 ```
 
-And browse to http://localhost:8016/list
+마지막으로 웹 브라우저에서 http://localhost:8016/list 에 접근해 결과를 확인한다.
 
-> You'll see an empty to-do list which you can endlessly fill
+> 이제 할일을 무한정 추가할 수 있는 빈 목록을 볼 수 있다.

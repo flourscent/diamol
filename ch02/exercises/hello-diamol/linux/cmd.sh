@@ -1,12 +1,12 @@
 echo ---------------------
-echo Hello from Chapter 2!
+echo 2장 학습을 시작합니다!
 echo ---------------------
-echo My name is:
+echo 컨테이너 명 :
 echo $(hostname)
 echo ---------------------
-echo I''m running on:
+echo 동작 중인 운영체제 :
 echo $(uname -s -r -m)
 echo ---------------------
-echo My address is:
+echo 컨테이너의 IP 주소 :
 echo $(ifconfig eth0 | grep inet)
 echo ---------------------

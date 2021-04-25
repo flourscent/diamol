@@ -1,10 +1,11 @@
-FROM diamol/golang AS builder
+FROM diamolkor/golang AS builder
 
 COPY main.go .
 RUN go build -o /server
 
 # app
-FROM diamol/base
+FROM diamolkor/base
+
 ENV IMAGE_API_URL="http://iotd/image" \
     ACCESS_API_URL="http://accesslog/access-log"
 

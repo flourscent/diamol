@@ -1,4 +1,6 @@
-# DIAMOL Chapter 3 Lab - Sample Solution
+# 도커를 다루는 기술 3장 연습문제 - 해답
+
+## 1번째 방법
 
 docker container run -it --name ch03lab diamol/ch03-lab
 
@@ -10,6 +12,7 @@ docker container commit ch03lab ch03-lab-soln
       
 docker container run ch03-lab-soln cat ch03.txt
 
-OR 
+
+## 2번째 방법 
 
 docker container run ch03-lab-soln cmd /s /c type ch03.txt

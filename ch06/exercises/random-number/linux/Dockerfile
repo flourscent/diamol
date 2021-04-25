@@ -1,5 +1,5 @@
 FROM alpine:3.9
 WORKDIR /random
-COPY random.sh .
+COPY random.sh /random
 RUN chmod +x random.sh
-CMD ./random.sh
+CMD /bin/sh ./random.sh

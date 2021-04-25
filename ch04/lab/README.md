@@ -1,20 +1,20 @@
-# DIAMOL Chapter 4 Lab - Sample Solution
+# 4장 연습문제 해답 예
 
-## Before
+## 최적화 전
 docker image build -t ch04-lab .
 
 docker container run -d -p 804:80 ch04-lab
 
-image is 800MB on Linux; 5.2GB on Windows
+이미지 크기는 리눅스 환경에서 800MB, 윈도우 환경에서 5.2GB다.
 
-## After
+## 최적화 후
 docker image build -t ch04-lab:optimized -f Dockerfile.optimized .
 
 docker container run -d -p 805:80 ch04-lab:optimized
 
-image is 15MB on Linux; 230MB on Windows
+이미지 크기는 리눅스 환경에서 15MB, 윈도우 환경에서 230MB다.
 
-## Linux
+## 리눅스
 
 ```
 >docker image ls ch04*
@@ -23,7 +23,7 @@ ch04-lab            optimized           acd8afedcb0d        16 minutes ago      
 ch04-lab            latest              87d6bce2a950        19 minutes ago      802MB
 ```
 
-## Windows
+## 윈도우
 
 ```
 >docker image ls ch04*
