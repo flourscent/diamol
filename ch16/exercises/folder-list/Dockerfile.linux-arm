@@ -1,4 +1,4 @@
-FROM diamol/base:linux-arm
+FROM diamolkor/base:linux-arm
 
 WORKDIR /app
 COPY file.txt .

@@ -1,19 +1,20 @@
-# DIAMOL Chapter 16 Lab - Sample Solution
+# 16장 연습문제 해답 예
 
 There are multiple problems with the original [Dockerfile](./Dockerfile) which stop it being multi-arch:
+기존의 [Dockerfile](./Dockerfile)은 멀티 아키텍처 빌드를 불가능하게 하는 문제가 여럿 있다.
 
-- it's pinned to a Linux-Intel image in the `FROM` instruction
-- it uses Linux-specific commands in the `RUN` instructions
-- it uses Linux-specific commands in the `CMD`
-- it uses Linux-style file paths.
+- `FROM` 인스트럭션에 리눅스-인텔 이미지가 사용됨
+- `RUN` 인스트럭션에 리눅스 전용 명령어가 사용됨
+- `CMD` 인스트럭션에 리눅스 전용 명령어가 사용됨
+- 경로 표기 방식이 리눅스에서만 사용되는 방식임
 
-The solution in [Dockerfile.solution](./Dockerfile.solution) fixes that by doing three things:
+해답 파일인 [Dockerfile.solution](./Dockerfile.solution)은 다음 방법으로 이 문제를 해결한다.
 
-- using a multi-arch image as the base
-- using `WORKDIR` to create and switch directories rather than OS commands
-- using an OS command in the `CMD` instruction which works in Linux and Windows.
+- 기반 이미지로 다중 아키텍처 이미지를 사용함
+- 특정 운영체제 전용 명령어 대신 `WORKDIR` 명령어를 사용해 디렉토리를 변경함 
+- CMD 인스트럭션에는 리눅스와 윈도우에서 공통적으로 사용되는 명령어를 사용함
 
-You can build and run the solution using Docker on any of the supported arhchitectures for this book:
+해답 파일을 이용하면 이 책에서 지원하는 아키텍처 중 무엇으로도 이미지를 빌드할 수 있다.
 
 ```
 docker image build -t diamol/ch16-lab -f Dockerfile.solution .

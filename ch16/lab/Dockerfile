@@ -1,4 +1,4 @@
-FROM diamol/base:linux-amd64
+FROM diamolkor/base:linux-amd64
 
 RUN mkdir -p /logs && \
     cd /logs && \
