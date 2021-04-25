@@ -1,16 +1,16 @@
-# DIAMOL Chapter 7 Lab - Sample Solution
+# 7장 연습문제 해답 예
 
-## Dev environment
+## 개발 환경
 
-This configuration uses Sqlite for data storage and published the web app to port `8020`.
+Sqlite 데이터베이스를 사용하며, 웹 애플리케이션이 포트 8020을 통해 공개된다.
 
-Run from this directory with:
+이 디렉토리에서 다음 명령을 실행하면 된다.
 
 ```
 docker-compose -f docker-compose-dev.yml up -d
 ```
 
-## Test environment
+## 테스트 환경
 
 ```
 mkdir -p /data/postgres
@@ -18,7 +18,7 @@ mkdir -p /data/postgres
 docker-compose -f docker-compose-test.yml up -d
 ```
 
-Or on Windows:
+## 테스트 환경 (윈도우)
 
 ```
 mkdir -p /data/postgres
