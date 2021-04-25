@@ -1,8 +1,8 @@
-## Credits
+## 출처
 
-From Anchore's docs: https://docs.anchore.com/current/docs/engine/engine_installation/docker_compose/
+Anchore의 참조 문서 https://docs.anchore.com/current/docs/engine/engine_installation/docker_compose/
 
-Using Anchore Engine version 0.5.2:
+Anchore Engine 버전 0.5.2를 사용함
 
 ```
 docker create --name ae anchore/anchore-engine:v0.5.2

@@ -1,4 +1,4 @@
-FROM diamol/base
+FROM diamolkor/base
 
 ARG DATASET_URL=https://archive.ics.uci.edu/ml/machine-learning-databases/url/url_svmlight.tar.gz
 

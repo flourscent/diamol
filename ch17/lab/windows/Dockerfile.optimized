@@ -3,7 +3,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 RUN Invoke-WebRequest -UseBasicParsing https://chocolatey.org/install.ps1 | Invoke-Expression
 RUN choco install -y docker
 
-FROM diamol/base
+FROM diamolkor/base
 ENV DOCKER_PATH="C:\\Program Files\\docker"
 RUN setx /M PATH "%PATH%;%DOCKER_PATH%;"
 COPY --from=install C:\\Windows\\system32\\netapi32.dll C:\\Windows\\system32\\netapi32.dll

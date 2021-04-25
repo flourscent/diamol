@@ -1,4 +1,4 @@
-FROM diamol/base
+FROM diamolkor/base
 
 ENV JENKINS_HOME="/data" \
     JENKINS_VERSION="2.190.2"
