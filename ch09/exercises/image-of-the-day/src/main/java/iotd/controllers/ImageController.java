@@ -33,21 +33,21 @@ public class ImageController {
     @RequestMapping("/image")
     @Timed()
     public Image get() {
-        log.debug("** GET /image called"); 
+        log.debug("** GET /image URL이 호출됨"); 
 
         Image img = cacheService.getImage();
         if (img == null) {
             RestTemplate restTemplate = new RestTemplate();
             ApodImage result = restTemplate.getForObject(apodUrl+apodKey, ApodImage.class);
 
-            log.info("Fetched new APOD image from NASA"); 
+            log.info("APOD 서비스에서 새로운 이미지를 내려받음"); 
             registry.counter("iotd_api_image_load", "status", "success").increment();
 
             img = new Image(result.getUrl(), result.getTitle(), result.getCopyright());            
             cacheService.putImage(img);
         }
         else {
-            log.debug("Loaded APOD image from cache");             
+            log.debug("캐시에 저장된 천문 사진을 사용함");             
             registry.counter("iotd_api_image_load", "status", "cached").increment();
         }
         return img;

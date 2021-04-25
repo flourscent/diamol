@@ -1,4 +1,4 @@
-FROM diamol/dotnet-sdk AS builder
+FROM diamolkor/dotnet-sdk AS builder
 
 WORKDIR /src
 COPY src/Numbers.Web/Numbers.Web.csproj .
@@ -8,7 +8,7 @@ COPY src/Numbers.Web/ .
 RUN dotnet publish -c Release -o /out Numbers.Web.csproj
 
 # app image
-FROM diamol/dotnet-aspnet
+FROM diamolkor/dotnet-aspnet
 
 ENV RngApi:Url=http://numbers-api/rng
 

@@ -19,7 +19,7 @@ public class Image {
     }
     
     public void setUrl(String url) {
-        // if it's a YouTube link need to format the URL to get the thumbnail:
+	// 유투브 링크일 경우 썸네일 경로로 변환
         // https://www.youtube.com/embed/ts0Ek3nLHew?rel=0 -> 
         // https://img.youtube.com/vi/ts0Ek3nLHew/0.jpg
         if (url.startsWith("https://www.youtube.com/embed/")) {

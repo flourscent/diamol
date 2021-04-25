@@ -11,7 +11,7 @@ public class Application {
 
     @RequestMapping("/")
     public String home() {
-        return "Nothing to see here, try /image";
+        return "이 페이지는 내용이 없습니다. URL /image 에 접근하세요.";
     }
 
     public static void main(String[] args) {
