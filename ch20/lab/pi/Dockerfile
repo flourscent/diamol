@@ -1,4 +1,4 @@
-FROM diamol/dotnet-sdk AS builder
+FROM diamolkor/dotnet-sdk AS builder
 
 WORKDIR /src
 COPY src/Pi.Web.csproj .
@@ -8,7 +8,7 @@ COPY src/ .
 RUN dotnet publish -c Release -o /out Pi.Web.csproj
 
 # pi
-FROM diamol/dotnet-aspnet
+FROM diamolkor/dotnet-aspnet
 
 EXPOSE 80
 ENTRYPOINT ["dotnet", "Pi.Web.dll"]

@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   whoami:
-    image: diamol/ch16-whoami
+    image: diamolkor/ch16-whoami
     networks:
       - ch20
 

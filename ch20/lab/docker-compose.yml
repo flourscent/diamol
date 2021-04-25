@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   pi:
-    image: diamol/ch20-pi
+    image: diamolkor/ch20-pi
     ports:
       - "8031:80"
     networks:
