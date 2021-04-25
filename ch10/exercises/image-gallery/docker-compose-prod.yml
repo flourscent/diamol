@@ -32,7 +32,7 @@ services:
       public: web
 
   prometheus:
-    image: diamol/ch09-prometheus
+    image: diamolkor/ch09-prometheus
     ports:
       - "9090:9090"
     environment:
@@ -44,7 +44,7 @@ services:
       <<: *labels
 
   grafana:
-    image: diamol/ch09-grafana
+    image: diamolkor/ch09-grafana
     ports:
       - "3000:3000"
     depends_on:

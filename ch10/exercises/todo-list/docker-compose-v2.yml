@@ -2,4 +2,4 @@ version: "3.7"
 
 services:
   todo-web:
-    image: diamol/ch06-todo-list:v2
+    image: diamolkor/ch06-todo-list:v2

@@ -10,7 +10,7 @@ services:
       - app-net
 
   todo-db:
-    image: diamol/postgres:11.5
+    image: diamolkor/postgres:11.5
     environment:
       - PGDATA=/data
     ports:
