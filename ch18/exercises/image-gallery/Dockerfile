@@ -1,4 +1,4 @@
-FROM diamol/golang AS builder
+FROM diamolkor/golang AS builder
 
 WORKDIR /src
 COPY ./src/go.mod .
@@ -8,7 +8,7 @@ COPY ./src/main.go .
 RUN go build -o /server
 
 # app
-FROM diamol/base
+FROM diamolkor/base
 
 EXPOSE 80
 CMD ["/app/server"]

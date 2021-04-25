@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   accesslog:
-    image: diamol/ch18-access-log
+    image: diamolkor/ch18-access-log
     ports:
       - "8030:80"
     environment:
@@ -13,7 +13,7 @@ services:
       - iotd-net
 
   iotd:
-    image: diamol/ch18-image-of-the-day
+    image: diamolkor/ch18-image-of-the-day
     ports:
       - "8020:80"
     environment:
@@ -25,7 +25,7 @@ services:
       - iotd-net
 
   image-gallery:
-    image: diamol/ch18-image-gallery
+    image: diamolkor/ch18-image-gallery
     ports:
       - "8010:80"
     environment:

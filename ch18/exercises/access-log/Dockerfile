@@ -1,11 +1,11 @@
-FROM diamol/node AS builder
+FROM diamolkor/node AS builder
 
 WORKDIR /src
 COPY src/package.json .
 RUN npm install
 
 # app
-FROM diamol/node
+FROM diamolkor/node
 
 EXPOSE 80
 CMD ["node", "server.js"]

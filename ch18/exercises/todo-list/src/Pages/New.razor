@@ -6,7 +6,7 @@
 @inject ToDoService ToDoService
 @inject NavigationManager NavigationManager
 
-<h1>New Item</h1>
+<h1>새 할일</h1>
 
 <EditForm Model="@todo" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
@@ -14,7 +14,7 @@
 
     <InputText id="item" class="new-item" @bind-Value="@todo.Item" />
 
-    <button type="submit">Submit</button>
+    <button type="submit">전송</button>
 </EditForm>
 
 @code {
