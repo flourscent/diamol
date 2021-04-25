@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   todo-web:
-    image: diamol/ch06-todo-list
+    image: diamolkor/ch06-todo-list
     ports:
       - 8080:80
     configs:
@@ -21,7 +21,7 @@ services:
       - app-net
 
   todo-db:
-    image: diamol/postgres:11.5
+    image: diamolkor/postgres:11.5
     environment:
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:

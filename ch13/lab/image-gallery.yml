@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   accesslog:
-    image: diamol/ch09-access-log
+    image: diamolkor/ch09-access-log
     deploy:
       replicas: 3
       resources:
@@ -13,7 +13,7 @@ services:
       - app-net
 
   iotd:
-    image: diamol/ch09-image-of-the-day
+    image: diamolkor/ch09-image-of-the-day
     ports:
       - 8088:80
     deploy:
@@ -26,7 +26,7 @@ services:
       - app-net
 
   image-gallery:
-    image: diamol/ch09-image-gallery
+    image: diamolkor/ch09-image-gallery
     ports:
       - 80:80
     deploy:
