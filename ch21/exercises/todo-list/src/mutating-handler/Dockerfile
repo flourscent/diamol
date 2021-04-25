@@ -1,4 +1,4 @@
-FROM diamol/dotnet-sdk AS builder
+FROM diamolkor/dotnet-sdk AS builder
 
 WORKDIR /src
 COPY src/core/ToDoList.Core.csproj ./core/
@@ -14,7 +14,7 @@ COPY src /src
 RUN dotnet publish -c Release -o /out ToDoList.MutatingHandler.csproj
 
 # app image
-FROM diamol/dotnet-runtime
+FROM diamolkor/dotnet-runtime
 
 WORKDIR /app
 ENTRYPOINT ["dotnet", "ToDoList.MutatingHandler.dll"]

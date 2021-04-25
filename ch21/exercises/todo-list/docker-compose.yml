@@ -2,26 +2,26 @@ version: "3.7"
 
 services:
   todo-web:
-    image: diamol/ch21-todo-list
+    image: diamolkor/ch21-todo-list
     ports:
       - 8080:80
     networks:
       - app-net
 
   todo-db:
-    image: diamol/postgres:11.5
+    image: diamolkor/postgres:11.5
     networks:
       - app-net
 
   message-queue:
-    image: diamol/nats
+    image: diamolkor/nats
     ports:
       - "8222:8222"
     networks:
       - app-net
 
   save-handler:
-    image: diamol/ch21-save-handler
+    image: diamolkor/ch21-save-handler
     networks:
       - app-net
 
