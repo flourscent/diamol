@@ -1,4 +1,4 @@
-FROM diamol/dotnet-sdk as builder
+FROM diamolkor/dotnet-sdk as builder
 
 WORKDIR /src
 COPY src/TimeCheck.csproj .
@@ -10,7 +10,7 @@ COPY src /src
 RUN dotnet publish -c Release -o /out TimeCheck.csproj
 
 # app image
-FROM diamol/dotnet-runtime
+FROM diamolkor/dotnet-runtime
 
 ARG BUILD_NUMBER=0
 ARG BUILD_TAG=local

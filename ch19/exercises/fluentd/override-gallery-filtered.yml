@@ -2,6 +2,6 @@ version: "3.7"
 
 services:
   fluentd:
-    image: diamol/fluentd
+    image: diamolkor/fluentd
     environment:
       FLUENTD_CONF: elasticsearch-gallery-filtered.conf

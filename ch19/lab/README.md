@@ -1,36 +1,37 @@
-# DIAMOL Chapter 19 Lab - Sample Solution
+# 19장 연습문제 해답 예
 
-Running the random number app with logs sent to Elasticsearch via Fluentd.
+일래스틱서치와 fluentd로 로그를 수집하도록 설정된 무작위 숫자 애플리케이션을 실행하라.
 
-## Solution
 
-There are three parts to my solution:
+## 해답
 
-- [solution.conf](./fluentd/conf/solution.conf) - adds the Fluentd enrichment and filtering
-- [fluentd/solution.yml](./fluentd/solution.yml) - Compose override to use the solution's Fluentd config
-- [numbers/solution.yml](./numbers/solution.yml) - Compose override to use Fluentd for the app
+필자의 해답은 크게 세 부분으로 구성된다.
 
-## Testing
+- [solution.conf](./fluentd/conf/solution.conf) - fluentd의 로그 가공 및 필터링 설정
+- [fluentd/solution.yml](./fluentd/solution.yml) - fluentd의 설정 오버라이드 파일
+- [numbers/solution.yml](./numbers/solution.yml) - 애플리케이션의 fluentd 사용 설정 오버라이드 파일
 
-Spin up the EFK stack from this directory:
+## 테스트
+
+현재 디렉토리에서 다음 명령으로 EFK 스택을 실행한다
 
 ```
 docker-compose -f fluentd/docker-compose.yml -f fluentd/solution.yml up -d
 ```
 
-And spin up the numbers app:
+그 다음 무작위 숫자 애플리케이션을 실행한다
 
 ```
 docker-compose -f numbers/docker-compose.yml -f numbers/solution.yml up -d
 ```
 
-Browse to http://localhost:8090 and generate a few random numbers.
+웹브라우저에서 http://localhost:8090에 접근해 무작위 숫자를 몇 차례 생성한다.
 
-Then browse to Kibana on http://localhost:5601:
+그 다음 http://localhost:5601에 접근해 키바나를 사용한다
 
-- set the index pattern to be `fluentd`
-- set the time field to be `@timestamp`
+- 인덱스 패턴을 `fleuntd`로 설정
+- 시간 필드를 `@timestamp`로 설정 
 
-In the Discover tab you'll see log entries from the API and the Web app:
+Discover 탭에서 API와 애플리케이션에서 수집된 로그를 볼 수 있다.
 
-![Log entries from the numbers containers in Kibana](./solution.png)
+![키바나를 통해 본 애플리케이션 로그](./solution.png)

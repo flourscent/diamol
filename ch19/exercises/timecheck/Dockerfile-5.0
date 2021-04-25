@@ -1,4 +1,4 @@
-FROM diamol/dotnet-sdk as builder
+FROM diamolkor/dotnet-sdk as builder
 WORKDIR /src
 COPY src/TimeCheck.csproj .
 RUN dotnet restore
@@ -6,7 +6,7 @@ COPY src /src
 RUN dotnet publish -c Release -o /out TimeCheck.csproj
 
 # tail utility
-FROM diamol/dotnet-sdk as utility
+FROM diamolkor/dotnet-sdk as utility
 WORKDIR /utility
 COPY utility/Tail.csproj .
 RUN dotnet restore
@@ -14,7 +14,7 @@ COPY utility /utility
 RUN dotnet publish -c Release -o /out Tail.csproj
 
 # app image
-FROM diamol/dotnet-runtime AS base
+FROM diamolkor/dotnet-runtime AS base
 
 ARG BUILD_NUMBER=0
 ARG BUILD_TAG=local
