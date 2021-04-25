@@ -12,7 +12,7 @@ RUN Write-Host "Downloading Apache version: $env:HTTPD_VERSION"; `
     Expand-Archive httpd.zip -DestinationPath C:\ ;
 
 # Apache
-FROM diamol/base
+FROM diamolkor/base
 
 EXPOSE 80 443
 WORKDIR C:\Apache24

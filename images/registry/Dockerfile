@@ -1,4 +1,4 @@
-FROM diamol/golang AS builder
+FROM diamolkor/golang AS builder
 
 WORKDIR ${GOPATH}/src/github.com/docker
 RUN git clone https://github.com/docker/distribution.git
@@ -9,7 +9,7 @@ RUN git checkout "v2.6.2" && \
     chmod +x /out/registry
 
 # Registry
-FROM diamol/base
+FROM diamolkor/base
 
 WORKDIR /data
 EXPOSE 5000

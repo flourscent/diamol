@@ -1,4 +1,4 @@
-FROM diamol/base as download
+FROM diamolkor/base as download
 ARG REDIS_VERSION="3.0.504"
 
 # https://github.com/microsoftarchive/redis/releases/download/win-3.0.504/Redis-x64-3.0.504.zip
@@ -8,7 +8,7 @@ RUN md redis && \
     tar -xzf redis.zip -C redis
 
 # redis
-FROM diamol/base
+FROM diamolkor/base
 
 EXPOSE 6379
 CMD ["redis-server"]

@@ -11,7 +11,7 @@ RUN Expand-Archive C:\libressl.zip C:\; `
   Remove-Item "C:\libressl-$env:LIBRESSL_VERSION-windows\x64\*.pdb"
 
 # Cert generator
-FROM diamol/base
+FROM diamolkor/base
 
 ARG LIBRESSL_VERSION="2.5.5"
 ENV LIBRESSL_HOME C:\libressl

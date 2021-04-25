@@ -11,7 +11,7 @@ RUN Write-Host 'Expanding Gogs...'; `
     Expand-Archive gogs.zip -DestinationPath C:\;
 
 # Gogs
-FROM diamol/base
+FROM diamolkor/base
 
 EXPOSE 3000
 VOLUME C:\data C:\logs C:\repositories

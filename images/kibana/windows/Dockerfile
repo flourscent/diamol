@@ -1,4 +1,4 @@
-FROM diamol/base as download
+FROM diamolkor/base as download
 ARG KIBANA_VERSION="6.8.5"
 
 # https://artifacts.elastic.co/downloads/kibana/kibana-oss-6.8.5-windows-x86_64.zip
@@ -11,7 +11,7 @@ WORKDIR /kibana-${KIBANA_VERSION}-windows-x86_64
 RUN rm -f node\\node.exe
 
 # kibana - we have to use 6.x because 7.x isn't compatible with Arm; 6.8.5 requires node@ 10.15.2
-FROM diamol/node:10.15.2
+FROM diamolkor/node:10.15.2
 ARG KIBANA_VERSION="6.8.5"
 
 EXPOSE 5601

@@ -1,4 +1,4 @@
-FROM diamol/base
+FROM diamolkor/base
 
 RUN apk add --no-cache libressl
 

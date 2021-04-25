@@ -1,4 +1,4 @@
-FROM diamol/base
+FROM diamolkor/base
 
 EXPOSE 80 443
 ENTRYPOINT ["/traefik"]

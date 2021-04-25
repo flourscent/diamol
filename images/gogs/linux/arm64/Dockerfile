@@ -17,7 +17,7 @@ WORKDIR /go/src/github.com/gogs/gogs
 RUN go build -tags "sqlite" -o /out/gogs 
 
 # Gogs - adapted from project Dockerfile at github.com/gogs/gogs
-FROM diamol/base
+FROM diamolkor/base
 
 # Install system utils & Gogs runtime dependencies
 ADD https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64 /usr/sbin/gosu

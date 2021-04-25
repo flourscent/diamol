@@ -1,4 +1,4 @@
-FROM diamol/base as download
+FROM diamolkor/base as download
 ARG ELASTIC_VERSION="6.8.5"
 
 # https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-oss-6.8.5.zip
@@ -7,7 +7,7 @@ RUN curl -o elasticsearch.zip https://artifacts.elastic.co/downloads/elasticsear
 RUN tar -xzf elasticsearch.zip
 
 # elasticsearch
-FROM diamol/openjdk
+FROM diamolkor/openjdk
 ARG ELASTIC_VERSION="6.8.5"
 
 EXPOSE 9200 9300
