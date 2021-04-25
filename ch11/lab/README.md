@@ -1,8 +1,8 @@
-# DIAMOL Chapter 11 Lab - Sample Solution
+# 11장 연습문제 해답 예
 
-## Build override file
+## 오버라이드 파일 생성하기
 
-- create `docker-compose-build.yml` with this content:
+- 다음 내용을 담아 `docker-compose-build.yml` 파일을 만든다.
 
 ```
 version: "3.7"
@@ -17,17 +17,18 @@ services:
 ```
 
 ## Jenkins job
+## 젠킨스 빌드 잡 생성하기
 
-- log into Jenkins
+- 젠킨스에 로그인
 
-- New Item, copy from `diamol`
+- `diamol` 항목을 복사한다
 
-- change script path to ch11/lab/Jenkinsfile
+- 스크립트 경로를 ch11/lab/Jenkinsfile 로 수정한다
 
-- click Build Now
+- Build Now를 클릭한다 
 
-- check that the image has been pushed to the registry:
+- 이미지가 로컬 레지스트리에 푸시된 것을 확인한다
 
 ```
-curl http://registry.local:5000/v2/diamol/ch11-todo-list/tags/list
+curl http://registry.local:5000/v2/diamolkor/ch11-todo-list/tags/list
 ```

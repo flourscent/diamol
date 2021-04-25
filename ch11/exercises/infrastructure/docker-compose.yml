@@ -2,21 +2,21 @@ version: "3.7"
 
 services:
   gogs:
-    image: diamol/gogs
+    image: diamolkor/gogs
     ports:
       - "3000:3000"
     networks:
       - infrastructure
 
   registry.local:
-    image: diamol/registry
+    image: diamolkor/registry
     ports:
       - "5000:5000"
     networks:
       - infrastructure
 
   jenkins:
-    image: diamol/jenkins
+    image: diamolkor/jenkins
     ports:
       - "8080:8080"
     networks:

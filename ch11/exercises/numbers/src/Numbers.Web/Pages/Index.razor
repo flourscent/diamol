@@ -6,11 +6,11 @@
 <h1>DIAMOL Random Number Generator</h1>
 
 @if (callFailed){
-    <p>RNG service unavailable!</p>
+    <p>무작위 숫자 서비스 사용불가!</p>
 }
 
 @if (callFailed == false && randomNumber != -1){
-    <p>Here it is: @randomNumber</p>
+    <p>무작위 숫자: @randomNumber</p>
 }
 
 <button class="btn btn-primary" @onclick="GetRandomNumber">Get a random number</button>

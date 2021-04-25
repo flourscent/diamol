@@ -5,11 +5,11 @@
 
 @inject ToDoService ToDoService
 
-<h1>TODO List</h1>
+<h1>할일 목록</h1>
 
-<p>There is much still to do.</p>
+<p>다음과 같은 할일이 아직 남아 있습니다.</p>
 
-<p>But there's always room to <a href="/new">add more</a>.</p>
+<p><a href="/new">새 항목</a>을 추가하세요.</p>
 
 @if (todos == null)
 {
@@ -20,8 +20,8 @@ else
 <table class="table">
     <thead>
         <tr>
-            <th>Item</th>
-            <th>Date Added</th>
+            <th>할일</th>
+            <th>추가한 날짜</th>
         </tr>
     </thead>
     <tbody>
