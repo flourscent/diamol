@@ -1,4 +1,4 @@
-FROM diamol/base
+FROM diamolkor/base
 
-WORKDIR /diamol
+WORKDIR /diamolkor
 COPY ch03.txt .
