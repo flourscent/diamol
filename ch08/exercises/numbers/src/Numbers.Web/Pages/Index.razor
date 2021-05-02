@@ -3,17 +3,17 @@
 @using Numbers.Web.Services
 @inject RandomNumberService RngService
 
-<h1>DIAMOL Random Number Generator</h1>
+<h1>DIAMOL 무작위 숫자 생성기</h1>
 
 @if (callFailed){
-    <p>RNG service unavailable!</p>
+    <p>무작위 서비스 사용불가!</p>
 }
 
 @if (callFailed == false && randomNumber != -1){
-    <p>Here it is: @randomNumber</p>
+    <p>무작위 숫자: @randomNumber</p>
 }
 
-<button class="btn btn-primary" @onclick="GetRandomNumber">Get a random number</button>
+<button class="btn btn-primary" @onclick="GetRandomNumber">무작위 숫자 생성</button>
 
 @code {  
     bool callFailed = false;  
