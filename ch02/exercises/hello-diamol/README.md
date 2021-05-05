@@ -13,20 +13,20 @@
 
 ```
 docker manifest create `
- diamol/ch02-hello-diamol:1.0 `
- diamol/ch02-hello-diamol:windows-x64 `
- diamol/ch02-hello-diamol:linux-x64 `
- diamol/ch02-hello-diamol:linux-amd64
+ diamolkor/ch02-hello-diamol:1.0 `
+ diamolkor/ch02-hello-diamol:windows-x64 `
+ diamolkor/ch02-hello-diamol:linux-x64 `
+ diamolkor/ch02-hello-diamol:linux-amd64
 ```
 
 3. 아키텍처별 이미지 확인
 
 ```
-docker manifest inspect diamol/ch02-hello-diamol:1.0
+docker manifest inspect diamolkor/ch02-hello-diamol:1.0
 ```
 
 4. 푸시
 
 ```
-docker manifest push diamol/ch02-hello-diamol:1.0
+docker manifest push diamolkor/ch02-hello-diamol:1.0
 ``
